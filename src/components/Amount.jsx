@@ -71,7 +71,7 @@ export default function Amount() {
             </div>
             <div className="submitBtn_div">
               <button className="addingTransaction" onClick={handleSubmit}>
-                ADD TRANSACTION :
+                ADD TRANSACTION 
               </button>
              </div>
           </div>

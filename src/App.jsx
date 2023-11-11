@@ -4,7 +4,7 @@ import Amount from './components/Amount'
 export default function App() {
   return (
    <>
-   <Header />
+   <Header  />
    <Amount />
    </>
   )
