@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2"
 
 export default function Amount() {
   const [transactions, setTransactions] = useState([]);
@@ -9,6 +10,22 @@ export default function Amount() {
   };
 
   const handleSubmit = () => {
+    
+      
+      const alphabetRegex = /^[A-Za-z]+$/;
+   
+      if (inputValue === "" ||  alphabetRegex.test(inputValue)) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Only Numbers Allowed",
+         
+        });
+      }
+      // Rest of your code
+   
+   
+
     const amount = +inputValue;
     if (!isNaN(amount) && amount !== 0) {
       const newTransaction = {
@@ -64,7 +81,7 @@ export default function Amount() {
               <label htmlFor="Amount">Amount</label>
               <input
                 id="Amount"
-                type="number"
+                type="text"
                 value={inputValue}
                 onChange={handleAmount}
               />
